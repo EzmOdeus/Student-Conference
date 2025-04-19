@@ -58,7 +58,7 @@ const Hero: React.FC = () => {
           <div className={`flex justify-center transition-all duration-700 delay-300 ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-12'}`}>
             <div className="relative w-72 mb-10 h-72 md:w-96 md:h-80">
               <img 
-                src="/public/conference-hall.png" 
+                src="/conference-hall.png" 
                 alt="شعار كلية التربية النوعية" 
                 className="w-full h-full object-contain"
               />
