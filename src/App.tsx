@@ -44,6 +44,44 @@ function App() {
         <Goals />
       </div>
       <Schedule />
+      <div className="container justify-center items-center mx-auto px-4 py-10">
+        <div className="grid grid-cols-1 justify-center items-center py-3 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative">
+              <img src="/1.jpg" alt="bannner" className="object-contain" />
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative">
+              <img src="/2.jpg" alt="bannner" className="object-contain" />
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative">
+              <img src="/3.jpg" alt="bannner" className="object-contain" />
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative">
+              <img src="/4.jpg" alt="bannner" className="object-contain" />
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative">
+              <img src="/5.jpg" alt="bannner" className="object-contain" />
+            </div>
+          </div>
+          <div className="bg-white rounded-lg shadow-lg overflow-hidden">
+            <div className=" relative h-[35rem]">
+              <img
+                src="/conference-bg - Copy.jpg"
+                alt="bannner"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
       <Registration />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         <div className="h-[400px] rounded-lg overflow-hidden shadow-xl">
