@@ -136,7 +136,7 @@ function App() {
           </div>
           <div className="flex  gap-4">
             <CalendarClock className="text-yellow-400" size={24} />
-            <span className="font-bold">١٠ صباحًا - ٣ مساءً</span>
+            <span className="font-bold"> ٩ صباحًا - ٣ مساءً</span>
           </div>
         </div>
       </div>

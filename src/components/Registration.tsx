@@ -1,32 +1,6 @@
-import React, { useState } from 'react';
-import { CheckCircle, Clock, MapPin, Send } from 'lucide-react';
+import React from 'react';
 
 const Registration: React.FC = () => {
-  const [formStatus, setFormStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle');
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    department: '',
-    academic_year: '',
-    expectations: ''
-  });
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    setFormStatus('submitting');
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setFormStatus('success');
-    }, 1500);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
-  };
-
   return (
     <section id="registration" className="py-16 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-purple-900/50 to-indigo-950/50 z-0"></div>
@@ -34,13 +8,14 @@ const Registration: React.FC = () => {
         <div className="text-center mb-12">
           <h2 className="section-title">التسجيل</h2>
           <p className="text-lg text-purple-200 max-w-2xl mx-auto">
-            سجل الآن للمشاركة في المؤتمر الطلابي الأول لكلية التربية النوعية واستفد من فرصة التواصل مع الخبراء والمختصين في مجالك
+            سجل الآن للمشاركة في المؤتمر الطلابي الأول لكلية التربية النوعية
+            واستفد من فرصة التواصل مع الخبراء والمختصين في مجالك
           </p>
         </div>
-        
+
         <div className="max-w-4xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-indigo-900/30 backdrop-blur-sm p-8 rounded-xl border border-indigo-800 shadow-lg">
+            {/* <div className="bg-indigo-900/30 backdrop-blur-sm p-8 rounded-xl border border-indigo-800 shadow-lg">
               <h3 className="text-2xl font-bold mb-6">معلومات التسجيل</h3>
               
               {formStatus === 'success' ? (
@@ -164,66 +139,124 @@ const Registration: React.FC = () => {
                       <>
                         <Send size={18} />
                         <span>تسجيل</span>
-                      </>
-                    )}
+                        </>
+                        )}
                   </button>
                 </form>
               )}
+            </div> */}
+
+            <div className="bg-indigo-900/30 backdrop-blur-sm p-6 rounded-xl border border-indigo-800 shadow-lg">
+              <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                مميزات المشاركة
+              </h3>
+              <ul className="space-y-3 list-disc list-inside text-purple-200">
+                <li>فرصة للتفاعل مع أساتذة وخبراء في مجال تخصصك</li>
+                <li>ورش عمل تطبيقية ومحاضرات متخصصة</li>
+                <li>التعرف على متطلبات سوق العمل في مجالك</li>
+                <li>شهادة حضور معتمدة من الكلية</li>
+                <li>مواد تعليمية وتدريبية قيمة</li>
+                <li>فرص للتواصل وتبادل الخبرات مع الزملاء</li>
+              </ul>
             </div>
-            
             <div className="space-y-6">
               <div className="bg-indigo-900/30 backdrop-blur-sm p-6 rounded-xl border border-indigo-800 shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-yellow-400">معلومات المؤتمر</h3>
+                <h3 className="text-xl font-bold mb-4 text-yellow-400">
+                  معلومات المؤتمر
+                </h3>
                 <ul className="space-y-4">
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-400 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+                      />
                     </svg>
                     <div>
                       <span className="block font-medium">التاريخ</span>
-                      <span className="text-purple-200">أبريل 2025</span>
+                      <span className="text-purple-200">22-23 أبريل 2025</span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-400 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+                      />
                     </svg>
                     <div>
                       <span className="block font-medium">الوقت</span>
-                      <span className="text-purple-200">من الساعة ١٠ صباحًا وحتى ٣ مساءً</span>
+                      <span className="text-purple-200">
+                        من الساعة ٩ صباحًا وحتى ٣ مساءً
+                      </span>
                     </div>
                   </li>
                   <li className="flex items-start gap-3">
-                    <svg className="w-6 h-6 text-yellow-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    <svg
+                      className="w-6 h-6 text-yellow-400 flex-shrink-0"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                      />
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                      />
                     </svg>
                     <div>
                       <span className="block font-medium">المكان</span>
-                      <span className="text-purple-200">كلية التربية النوعية - جامعة الإسكندرية</span>
+                      <span className="text-purple-200">
+                        كلية التربية النوعية - جامعة الإسكندرية
+                      </span>
                     </div>
                   </li>
                 </ul>
               </div>
-              
-              <div className="bg-indigo-900/30 backdrop-blur-sm p-6 rounded-xl border border-indigo-800 shadow-lg">
-                <h3 className="text-xl font-bold mb-4 text-yellow-400">مميزات المشاركة</h3>
-                <ul className="space-y-3 list-disc list-inside text-purple-200">
-                  <li>فرصة للتفاعل مع أساتذة وخبراء في مجال تخصصك</li>
-                  <li>ورش عمل تطبيقية ومحاضرات متخصصة</li>
-                  <li>التعرف على متطلبات سوق العمل في مجالك</li>
-                  <li>شهادة حضور معتمدة من الكلية</li>
-                  <li>مواد تعليمية وتدريبية قيمة</li>
-                  <li>فرص للتواصل وتبادل الخبرات مع الزملاء</li>
-                </ul>
-              </div>
-              
+
               <div className="bg-yellow-500/10 backdrop-blur-sm p-6 rounded-xl border border-yellow-500/30 shadow-lg">
                 <h3 className="text-lg font-bold mb-2">للاستفسارات والتواصل</h3>
-                <p className="text-purple-200 mb-3">لمزيد من المعلومات، يرجى التواصل عبر:</p>
+                <p className="text-purple-200 mb-3">
+                  لمزيد من المعلومات، يرجى التواصل عبر:
+                </p>
                 <div className="flex items-center gap-2">
-                  <svg className="w-5 h-5 text-yellow-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  <svg
+                    className="w-5 h-5 text-yellow-400"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
                   </svg>
                   <span>conference@alexu.edu.eg</span>
                 </div>
@@ -232,7 +265,6 @@ const Registration: React.FC = () => {
           </div>
         </div>
       </div>
-     
     </section>
   );
 };
